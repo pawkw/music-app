@@ -1,0 +1,29 @@
+{
+  "name": "music-app",
+  "version": "1.0.0",
+  "description": "A simple music player made in Electron.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawkw/music-app.git"
+  },
+  "keywords": [
+    "Electron",
+    "Music"
+  ],
+  "author": "Peter Weston",
+  "license": "GPL 3.0",
+  "bugs": {
+    "url": "https://github.com/pawkw/music-app/issues"
+  },
+  "homepage": "https://github.com/pawkw/music-app#readme",
+  "dependencies": {
+    "electron": "^5.0.4"
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0"
+  }
+}
