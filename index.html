@@ -38,7 +38,7 @@
 
             <div class="window-content">
                 <input type="file" style="display: none" multiple onchange="musicSelected()">
-                <audio src=""></audio>
+                <audio src="" onended="playNext()"></audio>
                 <div class="padding-more">
                         <h4></h4>
                     <div>
@@ -62,7 +62,7 @@
 
             <footer class="toolbar toolbar-footer">
                 <div class="toolbar-actions">
-                    <button class="btn btn-default pull-right">
+                    <button class="btn btn-default pull-right" onclick="clearPlaylist()">
                         Clear Playlist
                     </button>
                 </div>

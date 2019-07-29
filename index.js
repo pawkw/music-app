@@ -4,6 +4,7 @@ let songData = {path: [], title: [], artist: []};
 let audioPlayer = $('audio').get(0);
 let playing = false;
 let currentIndex = 0;
+let numberOfSongs = 0;
 let filesLoaded = false;
 let timer = null;
 
@@ -17,22 +18,22 @@ async function musicSelected() {
     
     for(let i=0; i<files.length; i++) {
         let {path, name} = files[i];
-        console.log(i, path);
+        console.log(i+numberOfSongs, path);
         const metadata = await mm.parseFile(path, {native: true});
         console.log(metadata.common.title, metadata.common.artist, metadata.format.duration);
-        songData.path[i] = path;
-        songData.title[i] = metadata.common.title ? metadata.common.title : name;
-        songData.artist[i] = metadata.common.artist ? metadata.common.artist : '???';
+        songData.path[i+numberOfSongs] = path;
+        songData.title[i+numberOfSongs] = metadata.common.title ? metadata.common.title : name;
+        songData.artist[i+numberOfSongs] = metadata.common.artist ? metadata.common.artist : '???';
         let duration = metadata.format.duration ? secondsToTime(metadata.format.duration) : '??:??';
         $('#table-body').append( `
-            <tr onclick="playSong(${i})" id="song-${i}">
-                <td>${i}</td>
-                <td>${songData.title[i]}</td>
-                <td>${songData.artist[i]}</td>
+            <tr onclick="playSong(${i+numberOfSongs})" id="song-${i+numberOfSongs}">
+                <td>${i+numberOfSongs}</td>
+                <td>${songData.title[i+numberOfSongs]}</td>
+                <td>${songData.artist[i+numberOfSongs]}</td>
                 <td>${duration}</td>
             </tr>`);
-        
     }
+    numberOfSongs += files.length;
 }
 
 function playSong(index) {
@@ -68,14 +69,6 @@ function playNext() {
     playSong(currentIndex);
 }
 
-function updateTime() {
-    $('#time-left').text(secondsToTime(audioPlayer.currentTime));
-    $('#total-time').text(secondsToTime(audioPlayer.duration));
-    if(audioPlayer.currentTime>audioPlayer.duration) {
-        playNext();
-    }
-}
-
 function play() {
     if(playing) {
         audioPlayer.pause();
@@ -88,6 +81,12 @@ function play() {
     }
     updatePlayButton();
 }
+
+function updateTime() {
+    $('#time-left').text(secondsToTime(audioPlayer.currentTime));
+    $('#total-time').text(secondsToTime(audioPlayer.duration));
+}
+
 
 function updatePlayButton() {
     let playIcon = $('#play-button span');
