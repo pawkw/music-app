@@ -1,6 +1,6 @@
 {
-  "name": "music-app",
-  "version": "1.0.0",
+  "name": "musaic",
+  "version": "0.1.0",
   "description": "A simple music player made in Electron.",
   "main": "main.js",
   "scripts": {

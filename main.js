@@ -4,6 +4,8 @@ const path = require('path');
 
 let win;
 
+// TODO: http://alexkatz.me/posts/building-a-custom-html5-audio-player-with-javascript/
+
 app.on('ready', () => {
     win = new BrowserWindow({
         height: 500,
