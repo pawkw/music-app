@@ -6,7 +6,7 @@ let win;
 app.on('ready', () => {
     win = new BrowserWindow({
         height: 500,
-        width: 400,
+        width: 600,
         webPreferences: {
             nodeIntegration: true
         }

@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/pawkw/music-app#readme",
   "dependencies": {
-    "electron": "^5.0.4"
+    "electron": "^5.0.4",
+    "jquery": "^3.4.1",
+    "music-metadata": "^4.2.0"
   },
   "devDependencies": {
     "eslint": "^6.1.0"

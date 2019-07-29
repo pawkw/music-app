@@ -24,7 +24,7 @@
                         <span id="time-left">00:00</span> | <span id="total-time">00:00</span>
                     </span>
 
-                    <button class="btn btn-default btn-large pull-right">
+                    <button class="btn btn-default btn-large pull-right" onclick="chooseMusic()">
                         <span class="icon icon-plus icon-text"></span>Add
                     </button>
                 </div>
@@ -32,12 +32,12 @@
             </header>
 
             <div class="window-content">
-                <input type="file" style="display: none" multiple>
+                <input type="file" style="display: none" multiple onchange="musicSelected()">
                 <audio src=""></audio>
                 <div class="padding-more">
                         <h4></h4>
                     <div>
-                        <table>
+                        <table style="width: 100%; table-layout: fixed; overflow-wrap: break-word;">
                             <thead>
                                 <tr>
                                     <th>Title</th>
@@ -63,6 +63,6 @@
             </footer>
 
         </div>
-        
+        <script src="index.js"></script>
     </body>
 </html>
