@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Musasic</title>
+        <title>Musaic</title>
         <link rel="stylesheet" href="css/photon.css">
         <style>
+            table {
+                border-collapse: collapse;
+                width: 95%;
+                margin-right: auto;
+                margin-left: auto;
+                table-layout: fixed;
+                overflow-wrap: break-word;
+            }
+            header {
+                padding-top: 5px;
+            }
+            .song-title {
+                width: 95%;
+                margin-right: auto;
+                margin-left: auto;
+            }
             .playing {
-                background-color: #88f;
+                border: solid;
+                border-width: thick;
+                border-color: chartreuse;
+                background-color: palegreen;
             }
         </style>
     </head>
@@ -29,7 +48,7 @@
                         <span id="time-left">00:00</span> | <span id="total-time">00:00</span>
                     </span>
 
-                    <button class="btn btn-default btn-large pull-right" onclick="chooseMusic()">
+                    <button class="btn btn-default pull-right" onclick="chooseMusic()">
                         <span class="icon icon-plus icon-text"></span>Add
                     </button>
                 </div>
@@ -40,12 +59,11 @@
                 <input type="file" style="display: none" multiple onchange="musicSelected()">
                 <audio src="" onended="playNext()"></audio>
                 <div class="padding-more">
-                        <h4></h4>
+                    <div class="song-title"><h4></h4></div>
                     <div>
-                        <table style="width: 100%; table-layout: fixed; overflow-wrap: break-word;">
+                        <table>
                             <thead>
                                 <tr>
-                                    <th>#</th>
                                     <th>Title</th>
                                     <th>Artist</th>
                                     <th>Duration</th>

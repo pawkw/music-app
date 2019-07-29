@@ -26,7 +26,6 @@ async function musicSelected() {
         let duration = metadata.format.duration ? secondsToTime(metadata.format.duration) : '??:??';
         $('#table-body').append( `
             <tr onclick="playSong(${i+numberOfSongs})" id="song-${i+numberOfSongs}">
-                <td>${i+numberOfSongs}</td>
                 <td>${songData.title[i+numberOfSongs]}</td>
                 <td>${songData.artist[i+numberOfSongs]}</td>
                 <td>${duration}</td>
