@@ -5,7 +5,6 @@ let audioPlayer = $('audio').get(0);
 let playing = false;
 let currentIndex = 0;
 let numberOfSongs = 0;
-let filesLoaded = false;
 let timer = null;
 
 function chooseMusic() {
@@ -82,7 +81,24 @@ function play() {
     updatePlayButton();
 }
 
+function clearPlaylist() {
+    audioPlayer.pause();
+    audioPlayer.src = '';
+    clearInterval(timer);
+    timer = null;
+    currentIndex = 0;
+    numberOfSongs = 0;
+    playing = false;
+    $('h4').text('');
+    songData = songData = {path: [], title: [], artist: []};
+    $('#time-left').text('00:00');
+    $('#total-time').text('00:00');
+    $('#table-body').html('');
+    updatePlayButton();
+}
+
 function updateTime() {
+    if(!playing) return;
     $('#time-left').text(secondsToTime(audioPlayer.currentTime));
     $('#total-time').text(secondsToTime(audioPlayer.duration));
 }
