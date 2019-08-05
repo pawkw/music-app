@@ -9,3 +9,11 @@ As yet, this app is not ready for distribution. To install it, you need to have 
 2. Open a terminal in the app root directory.
 3. Enter `npm install`.
 4. If everything goes well, enter `npm start`.
+
+## TODO:
+- [ ] Close to tray.
+- [ ] Context menu in tray to quit.
+- [ ] Desktop notification on song change if in tray.
+- [ ] 
+- [ ] Handle open folders.
+- [ ] Handle drag and drop?
